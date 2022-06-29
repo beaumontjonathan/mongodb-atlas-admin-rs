@@ -1,0 +1,11 @@
+[package]
+name = "mongodb-atlas-admin"
+description = "A wrapper around the MongoDB Atlas Admin API"
+homepage = "https://github.com/beaumontjonathan/mongodb-atlas-admin-rs#readme"
+repository = "https://github.com/beaumontjonathan/mongodb-atlas-admin-rs"
+version = "0.0.0"
+edition = "2021"
+license = "MIT"
+keywords = ["mongodb", "atlas"]
+
+[dependencies]
