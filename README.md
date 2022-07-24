@@ -1,2 +1,364 @@
 # mongodb-atlas-admin-rs
-A wrapper around the MongoDB Atlas Admin API
+
+A wrapper around the MongoDB Atlas Admin API.
+
+## Status
+
+At this stage, this is still very much a work in progress. I will be going
+through each of the endpoints listed in the [progress](#progress) section below.
+
+## Progress
+
+- Sections: 1/50
+- Routes: 4/300
+
+- [x] Access Tracking [Untested, needs non-serverless instances]
+  - [x] Return Database Access History for One Cluster using Its Cluster Name
+  - [x] Return Database Access History for One Cluster using Its Hostname
+- [ ] Alert Configurations
+  - [x] Get All Alert Configuration Matchers Field Names
+  - [x] Return All Alert Configurations for One Project
+  - [ ] Create One Alert Configuration in One Project
+  - [ ] Remove One Alert Configuration from One Project
+  - [ ] Return One Alert Configuration from One Project
+  - [ ] Toggle One State of One Alert Configuration in One Project
+  - [ ] Update One Alert Configuration for One Project
+  - [ ] Return All Open Alerts for Alert Configuration
+- [ ] Alerts
+  - [ ] Return All Alerts from One Project
+  - [ ] Return One Alert from One Project
+  - [ ] Acknowledge One Alert from One Project
+  - [ ] Return All Alert Configurations Set for One Alert
+- [ ] Atlas Search
+  - [ ] Return All User-Defined Analyzers for One Cluster
+  - [ ] Update All User-Defined Analyzers for One Cluster
+  - [ ] Create One Atlas Search Index
+  - [ ] Return All Atlas Search Indexes for One Collection
+  - [ ] Remove One Atlas Search Index
+  - [ ] Return One Atlas Search Index
+  - [ ] Update One Atlas Search Index
+- [ ] Auditing
+  - [ ] Return the Auditing Configuration for One Project
+  - [ ] Update Auditing Configuration for One Project
+- [ ] Cloud Backups
+  - [ ] Return All Replica Set Cloud Backups
+  - [ ] Take One On-Demand Snapshot Deprecated
+  - [ ] Remove One Sharded Cluster Cloud Backup Deprecated
+  - [ ] Return One Sharded Cluster Cloud Backup
+  - [ ] Return All Sharded Cluster Cloud Backups
+  - [ ] Remove One Replica Set Cloud Backup Deprecated
+  - [ ] Return One Replica Set Cloud Backup
+  - [ ] Return All Snapshots of One Serverless Instance
+  - [ ] Return One Snapshot of One Serverless Instance
+- [ ] Cloud Backup Export
+  - [ ] Return All AWS S3 Buckets Used for Cloud Backup Snapshot Exports
+  - [ ] Grant Access to AWS S3 Bucket for Cloud Backup Snapshot Exports
+  - [ ] Revoke Access to AWS S3 Bucket for Cloud Backup Snapshot Exports
+  - [ ] Return One AWS S3 Bucket Used for Cloud Backup Snapshot Exports
+  - [ ] Return All Cloud Backup Snapshot Export Jobs
+  - [ ] Create One Cloud Backup Snapshot Export Job
+  - [ ] Return One Cloud Backup Snapshot Export Job
+- [ ] Cloud Backup Restore Jobs
+  - [ ] Return All Restore Jobs for One Cluster Deprecated
+  - [ ] Restore One Snapshot of One Cluster Deprecated
+  - [ ] Cancel One Restore Job of One Cluster Deprecated
+  - [ ] Return One Restore Job of One Cluster Deprecated
+  - [ ] Return All Restore Jobs for One Serverless Instance Deprecated
+  - [ ] Restore One Snapshot of One Serverless Instance Deprecated
+  - [ ] Return One Restore Job for One Serverless Instance Deprecated
+- [ ] Cloud Backup Schedule
+  - [ ] Remove All Cloud Backup Schedules Deprecated
+  - [ ] Return One Cloud Backup Schedule
+  - [ ] Update Cloud Backup Schedule for One Cluster Deprecated
+- [ ] Cloud Migration Service
+  - [ ] Creates one migration.
+  - [ ] Validate one migration request. If the check passes, the migration can proceed.
+  - [ ] Return one specific validation job.
+  - [ ] Return one specific migration.
+  - [ ] Start the migration cutover.
+  - [ ] Return the list of projects available for migration.
+  - [ ] Delete one link-token
+  - [ ] Create one link-token.
+  - [ ] Remove the link between organizations.
+  - [ ] Link the organization with Atlas.
+  - [ ] Return the status of the organization link.
+- [ ] Cloud Provider Access
+  - [ ] Return All Cloud Provider Access Roles
+  - [ ] Create One Cloud Provider Access Role
+  - [ ] Deauthorize One Cloud Provider Access Role
+  - [ ] Authorize One Cloud Provider Access Role
+- [ ] Clusters
+  - [ ] Return All Clusters in One Project
+  - [ ] Create One Cluster
+  - [ ] Return All Cloud Provider Regions
+  - [ ] Upgrade One Shared-tier Cluster
+  - [ ] Return One Advanced Configuration Options for One Cluster
+  - [ ] Update Advanced Configuration Options for One Cluster
+  - [ ] Test Failover for One Cluster
+  - [ ] Return Status of All Cluster Operations
+  - [ ] Remove One Cluster
+  - [ ] Return One Cluster in One Project
+  - [ ] Update Configuration of One Cluster
+  - [ ] Load Sample Dataset Request into Cluster
+  - [ ] Check Status of Cluster Sample Dataset Request
+  - [ ] Return All Authorized Clusters in All Projects
+- [ ] Custom DNS for Atlas Clusters Deployed to AWS
+  - [ ] Return One Custom DNS Configuration for Atlas Clusters on AWS
+  - [ ] Toggle State of One Custom DNS Configuration for Atlas Clusters on AWS
+- [ ] Custom Database Roles
+  - [ ] Return All Custom Roles in One Project
+  - [ ] Create One Custom Role
+  - [ ] Remove One Custom Role from One Project
+  - [ ] Return One Custom Role in One Project
+  - [ ] Update One Custom Role in One Project
+- [ ] Database Users
+  - [ ] Return All Database Users from One Project
+  - [ ] Create One Database User in One Project
+  - [ ] Remove One Database User from One Project
+  - [ ] Return One Database User from One Project
+  - [ ] Update One Database User in One Project
+- [ ] Data Federation
+  - [ ] Return All Federated Databases in One Project
+  - [ ] Create One Federated Database in One Project
+  - [ ] Remove One Federated Database from One Project
+  - [ ] Return One Federated Database in One Project
+  - [ ] Update One Federated Database in One Project
+  - [ ] Download Query Logs for One Federated Database
+- [ ] Data Federation Private Networks
+  - [ ] Return All Federated Database Instance and Online Archive Private Endpoints in One Project
+  - [ ] Create One Federated Database Instance and Online Archive Private Endpoint for One Project
+  - [ ] Remove One Federated Database Instance and Online Archive Private Endpoint from One Project
+  - [ ] Return One Federated Database Instance and Online Archive Private Endpoint in One Project
+- [ ] Encryption at Rest using Customer Key Management
+  - [ ] Return One Configuration for Encryption at Rest using Customer-Managed Keys for One Project
+  - [ ] Update Configuration for Encryption at Rest using Customer-Managed Keys for One Project
+- [ ] Events
+  - [ ] Return All Events from One Project
+  - [ ] Return One Event from One Project
+  - [ ] Return All Events from One Organization
+  - [ ] Return One Event from One Organization
+- [ ] Federated Authentication
+  - [ ] Delete the federation settings instance.
+  - [ ] Return the list of connected org configs from the federation.
+  - [ ] Remove a connected org config from the federation.
+  - [ ] Return the connected org config specified by orgId from the federation.
+  - [ ] Update one connected organization configuration in the specified federation.
+  - [ ] Return all role mappings from the specified organization.
+  - [ ] Add one role mapping in one organization.
+  - [ ] Remove one role mapping in one organization.
+  - [ ] Return one role mapping from one organization.
+  - [ ] Update one role mapping in one organization.
+  - [ ] Return all identity providers from the specified federation.
+  - [ ] Return one identity provider from the specified federation.
+  - [ ] Update the identity provider.
+  - [ ] Return the metadata of one identity provider in the specified federation.
+  - [ ] Return the federation settings for the organization.
+- [ ] Global Clusters
+  - [ ] Return All Global Clusters Data
+  - [ ] Remove All Custom Zone Mappings from One Global Cluster
+  - [ ] Add Custom Zone Mappings to One Global Cluster
+  - [ ] Remove One Managed Namespace from One Global Cluster
+  - [ ] Create One Managed Namespace in One Global Cluster
+  - [ ] Remove All Custom Zone Mappings from One Global Multi-Cloud Cluster
+  - [ ] Remove One Managed Namespace from One Global Multi-Cloud Cluster
+- [ ] Invoices
+  - [ ] Return All Invoices for One Organization
+  - [ ] Return All Pending Invoices for One Organization
+  - [ ] Return One Organization Invoice
+  - [ ] Return One Organization Invoice as CSV
+- [ ] LDAP Configuration
+  - [ ] Return the Current LDAP or X.509 Configuration
+  - [ ] Edit the LDAP or X.509 Configuration
+  - [ ] Remove the Current LDAP User to DN Mapping
+  - [ ] Verify the LDAP Configuration in One Project
+  - [ ] Return the Status of One Verify LDAP Configuration Request
+- [ ] Legacy Backup Snapshots
+  - [ ] Return All Legacy Backup Snapshots Deprecated
+  - [ ] Remove One Legacy Backup Snapshot Deprecated
+  - [ ] Return One Legacy Backup Snapshot Deprecated
+  - [ ] Change One Legacy Backup Snapshot Expiration Deprecated
+- [ ] Legacy Backup Restore Jobs
+  - [ ] Return All Legacy Backup Restore Jobs Deprecated
+  - [ ] Create One Legacy Backup Restore Job Deprecated
+  - [ ] Return One Legacy Backup Restore Job Deprecated
+- [ ] Legacy Backup Checkpoints
+  - [ ] Return All Legacy Backup Checkpoints Deprecated
+  - [ ] Return One Legacy Backup Checkpoint Deprecated
+- [ ] Legacy Backup Snapshot Schedule
+  - [ ] Return One Snapshot Schedule Deprecated
+  - [ ] Update Snapshot Schedule for One Cluster Deprecated
+- [ ] Maintenance Windows
+  - [ ] Reset One Maintenance Window for One Project
+  - [ ] Return One Maintenance Window for One Project
+  - [ ] Update Maintenance Window for One Project
+  - [ ] Automate Deferral of Maintenance for One Project
+  - [ ] Defer One Maintenance Window for One Project
+- [ ] MongoDB Cloud Users
+  - [ ] Create One MongoDB Cloud User
+  - [ ] Return One MongoDB Cloud User using Their Username
+  - [ ] Return One MongoDB Cloud User using Its ID
+- [ ] Monitoring and Logs
+  - [ ] Download Logs for One Cluster Host in One Project
+  - [ ] Return All Atlas Search Metric Types for One Process
+  - [ ] Return All Atlas Search Index Metrics for One Namespace
+  - [ ] Return Atlas Search Metrics for One Index in One Specified Namespace
+  - [ ] Return Atlas Search Hardware and Status Metrics
+  - [ ] Return All MongoDB Processes in One Project
+  - [ ] Return One MongoDB Process by ID
+  - [ ] Return Available Databases for One MongoDB Process
+  - [ ] Return One Database for a MongoDB Process
+  - [ ] Return Measurements of One Database for One MongoDB Process
+  - [ ] Return Available Disks for One MongoDB Process
+  - [ ] Return Measurements of One Disk
+  - [ ] Return Measurements of One Disk for One MongoDB Process
+  - [ ] Return Measurements for One MongoDB Process
+  - [ ] Download Logs for One Multi-Cloud Cluster Host in One Project
+- [ ] Multi-Cloud Clusters
+  - [ ] Return All Multi-Cloud Clusters from One Project
+  - [ ] Create One Multi-Cloud Cluster from One Project
+  - [ ] Remove One Multi-Cloud Cluster from One Project
+  - [ ] Return One Multi-Cloud Cluster from One Project
+  - [ ] Modify One Multi-Cloud Cluster from One Project
+  - [ ] Test Failover for One Multi-Cloud Cluster
+- [ ] Network Peering
+  - [ ] Verify Connect via Peering Only Mode for One Project Deprecated
+  - [ ] Disable Connect via Peering Only Mode for One Project Deprecated
+- [ ] Network Peering Connections
+  - [ ] Return All Network Peering Connections in One Project
+  - [ ] Create One New Network Peering Connection
+  - [ ] Remove One Existing Network Peering Connection
+  - [ ] Return One Network Peering Connection in One Project
+  - [ ] Update One New Network Peering Connection
+- [ ] Network Peering Containers
+  - [ ] Return All Network Peering Containers in One Project for One Cloud Provider
+  - [ ] Create One New Network Peering Container
+  - [ ] Return All Network Peering Containers in One Project
+  - [ ] Remove One Network Peering Container
+  - [ ] Return One Network Peering Container
+  - [ ] Update One Network Peering Container
+- [ ] Online Archive
+  - [ ] Return All Online Archives for One Cluster
+  - [ ] Create One Online Archive
+  - [ ] Download Online Archive Query Logs
+  - [ ] Remove One Online Archive
+  - [ ] Return One Online Archive
+  - [ ] Update One Online Archive
+- [ ] Organizations
+  - [ ] Return All Organizations
+  - [ ] Remove One Organization
+  - [ ] Return One Organization
+  - [ ] Rename One Organization
+  - [ ] Return the federation settings for the organization.
+  - [ ] Return One or More Projects in One Organization
+  - [ ] Return All Organization Invitations
+  - [ ] Update One Organization Invitation
+  - [ ] Invite One MongoDB Cloud User to Join One Atlas Organization
+  - [ ] Cancel One Organization Invitation
+  - [ ] Return One Organization Invitation
+  - [ ] Update One Organization Invitation by Invitation ID
+  - [ ] Return All MongoDB Cloud Users in One Organization
+- [ ] Performance Advisor
+  - [ ] Return All Namespaces for One Host
+  - [ ] Return Slow Queries
+  - [ ] Return Suggested Indexes
+  - [ ] Return All Namespaces for One Host
+  - [ ] Return Slow Queries
+  - [ ] Return Suggested Indexes
+  - [ ] Disable Managed Slow Operation Threshold
+  - [ ] Enable Managed Slow Operation Threshold
+- [ ] Private Endpoint Services
+  - [ ] Create One Private Endpoint Service for One Provider
+  - [ ] Return Regionalized Private Endpoint Status
+  - [ ] Toggle Regionalized Private Endpoint Status
+  - [ ] Return All Private Endpoint Services for One Provider
+  - [ ] Remove One Private Endpoint Service for One Provider
+  - [ ] Return One Private Endpoint Service for One Provider
+  - [ ] Create One Private Endpoint for One Provider
+  - [ ] Remove One Private Endpoint for One Provider
+  - [ ] Return One Private Endpoint for One Provider
+- [ ] Programmatic API Keys
+  - [ ] Return All Organization API Keys Assigned to One Project
+  - [ ] Create and Assign One Organization API Key to One Project
+  - [ ] Unassign One Organization API Key from One Project
+  - [ ] Update Roles of One Organization API Key to One Project
+  - [ ] Assign One Organization API Key to One Project
+  - [ ] Return All Organization API Keys
+  - [ ] Create One Organization API Key
+  - [ ] Remove One Organization API Key
+  - [ ] Return One Organization API Key
+  - [ ] Update One Organization API Key
+  - [ ] Return All Access List Entries for One Organization API Key
+  - [ ] Create Access List Entries for One Organization API Key Deprecated
+  - [ ] Remove One Access List Entry for One Organization API Key Deprecated
+  - [ ] Return One Access List Entry for One Organization API Key
+- [ ] Project IP Access List
+  - [ ] Return Project IP Access List
+  - [ ] Add Entries to Project IP Access List
+  - [ ] Remove One Entry from One Project IP Access List
+  - [ ] Return One Project IP Access List Entry
+  - [ ] Return Status of One Project IP Access List Entry
+- [ ] Projects
+  - [ ] Return All Projects
+  - [ ] Create One Project
+  - [ ] Return One Project using Its Name
+  - [ ] Remove One Project
+  - [ ] Return One Project
+  - [ ] Return One Project Settings
+  - [ ] Update One Project Settings
+  - [ ] Return All Users in One Project
+  - [ ] Remove One User from One Project
+  - [ ] Return All Project Invitations
+  - [ ] Update One Project Invitation
+  - [ ] Invite One MongoDB Cloud User to Join One Project
+  - [ ] Cancel One Project Invitation
+  - [ ] Return One Project Invitation
+  - [ ] Update One Project Invitation by Invitation ID
+- [ ] Rolling Index
+  - [ ] Create One Rolling Index
+- [ ] Root
+  - [ ] Return the status of this MongoDB application
+- [ ] Serverless Instances
+  - [ ] Return All Serverless Instances from One Project
+  - [ ] Create One Serverless Instance in One Project
+  - [ ] Remove One Serverless Instance from One Project
+  - [ ] Return One Serverless Instance from One Project
+- [ ] Serverless Private Endpoints
+  - [ ] Return All Private Endpoints for One Serverless Instance
+  - [ ] Create One Private Endpoint for One Serverless Instance
+  - [ ] Remove One Private Endpoint for One Serverless Instance
+  - [ ] Return One Private Endpoint for One Serverless Instance
+  - [ ] Update One Private Endpoint for One Serverless Instance
+- [ ] Shared-Tier Restore Jobs
+  - [ ] Create One Restore Job from One M2 or M5 Cluster
+  - [ ] Return All Restore Jobs for One M2 or M5 Cluster
+  - [ ] Return One Restore Job for One M2 or M5 Cluster
+- [ ] Shared-Tier Snapshots
+  - [ ] Download One M2 or M5 Cluster Snapshot
+  - [ ] Return All Snapshots for One M2 or M5 Cluster
+  - [ ] Return One Snapshot for One M2 or M5 Cluster
+- [ ] Teams
+  - [ ] Return All Teams in One Project
+  - [ ] Add One or More Teams to One Project
+  - [ ] Remove One Team from One Project
+  - [ ] Update Team Roles in One Project
+  - [ ] Return All Teams in One Organization
+  - [ ] Create One Team in One Organization
+  - [ ] Return One Team using its Name
+  - [ ] Remove One Team from One Organization
+  - [ ] Return One Team using its ID
+  - [ ] Rename One Team
+  - [ ] Return All MongoDB Cloud Users Assigned to One Team
+  - [ ] Assign MongoDB Cloud Users from One Organization to One Team
+  - [ ] Remove One MongoDB Cloud User from One Team
+- [ ] Third-Party Service Integrations
+  - [ ] Return All Active Third-Party Service Integrations
+  - [ ] Remove One Third-Party Service Integration
+  - [ ] Return One Third-Party Service Integration
+  - [ ] Configure One Third-Party Service Integration
+  - [ ] Update One Third-Party Service Integration
+- [ ] X.509 Authentication for Database Users
+  - [ ] Return All X.509 Certificates Assigned to One MongoDB User
+  - [ ] Create One X.509 Certificate for One MongoDB User
+  - [ ] Return the Current LDAP or X.509 Configuration
+  - [ ] Edit the LDAP or X.509 Configuration
+  - [ ] Disable Customer-Managed X.509

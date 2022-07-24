@@ -3,9 +3,22 @@ name = "mongodb-atlas-admin"
 description = "A wrapper around the MongoDB Atlas Admin API"
 homepage = "https://github.com/beaumontjonathan/mongodb-atlas-admin-rs#readme"
 repository = "https://github.com/beaumontjonathan/mongodb-atlas-admin-rs"
-version = "0.0.0"
+version = "0.0.1"
 edition = "2021"
 license = "MIT"
 keywords = ["mongodb", "atlas"]
 
 [dependencies]
+async-trait = "0.1"
+chrono = { version = "0.4", features = ["serde"] }
+digest_auth = { version = "0.3", features = ["http"] }
+futures = "0.3"
+http = "0.2"
+reqwest = { version = "0.11", features = ["json"] }
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+thiserror = "1.0"
+urlencoding = "2.1"
+
+[dev-dependencies]
+pretty_assertions = "1.2"
